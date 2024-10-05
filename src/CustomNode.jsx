@@ -10,14 +10,14 @@ const CustomNode = ({ data }) => {
   const toggleSubCollapse = () => setSubCollapsed(!subCollapsed);
 
   return (
-    <div className="p-4 border border-gray-300 rounded bg-white shadow-md">
-      <div className="flex justify-between border-b-2 border-black items-center">
-        <h3>{data.label}</h3>
+    <div className="p-4 border border-blue-300 rounded bg-white shadow-md">
+      <div className="flex justify-between font-bold items-center">
+        <h3 className='text-2xl'>{data.label}</h3>
         <AiOutlineDown className="cursor-pointer" onClick={toggleCollapse} />
       </div>
       {!collapsed && (
         <div className="mt-2">
-          <div className="flex justify-between border-b-2 border-black  items-center">
+          <div className="flex justify-between font-bold items-center">
             <h4>{data.subheading1}</h4>
             <AiOutlineDown className="cursor-pointer" onClick={toggleSubCollapse} />
           </div>
@@ -29,7 +29,7 @@ const CustomNode = ({ data }) => {
             </ul>
           )}
 
-          <div className="flex justify-between border-b-2 border-black  items-center mt-2">
+          <div className="flex justify-between font-bold  items-center mt-2">
             <h4>{data.subheading2}</h4>
             <AiOutlineDown className="cursor-pointer" onClick={toggleSubCollapse} />
           </div>
