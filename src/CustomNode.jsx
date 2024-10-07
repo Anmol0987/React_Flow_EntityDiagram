@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Handle, Position } from '@xyflow/react';
 import { AiOutlineDown } from 'react-icons/ai';
 
-const CustomNode = ({ data }) => {
+const CustomNode = ({ data,id }) => {
   const [collapsed, setCollapsed] = useState(false);
   const [subCollapsed, setSubCollapsed] = useState(false);
 
@@ -12,7 +12,11 @@ const CustomNode = ({ data }) => {
   return (
     <div className="p-4 border border-blue-300 rounded bg-white shadow-md">
       <div className="flex justify-between font-bold items-center">
-        <h3 className='text-2xl'>{data.label}</h3>
+        <h3 className='text-2xl'>
+          {data.label}
+          </h3>
+          <Handle type="source" id={`${id}`} position={Position.Top}  />
+          <Handle type="target" id={`${id}`} position={Position.Bottom}  />
         <AiOutlineDown className="cursor-pointer" onClick={toggleCollapse} />
       </div>
       {!collapsed && (
@@ -26,17 +30,17 @@ const CustomNode = ({ data }) => {
               {data.components1.map((component, index) => (
                 <li key={index}>
                   <div className='bg-red-500'>
-                    {component}
+                    {component.name}
                     <Handle
                       type="source"
                       position={Position.Right}
-                      id={`${component}`}
+                      id={`${component.id}`}
                       style={{ background: 'red', top: 90 + index * 30 }}
                     />
                     <Handle
                       type="target"
                       position={Position.Left}
-                      id={`${component}`}
+                      id={`${component.id}`}
                       style={{ background: 'red', top: 90 + index * 30 }}
                     />
                   </div>
@@ -54,17 +58,17 @@ const CustomNode = ({ data }) => {
             <ul>
               {data.components2.map((component, index) => (
                 <li className='bg-orange-400' key={index}>
-                  {component}
+                  {component.name}
                   <Handle
                     type="source"
                     position={Position.Right}
-                    id={`${component}`}
+                    id={`${component.id}`}
                     style={{ background: 'orange', top: 145 + index * 30 }}
                   />
                   <Handle
                     type="target"
                     position={Position.Left}
-                    id={`${component}`}
+                    id={`${component.id}`}
                     style={{ background: 'orange', top: 145 + index * 30 }}
                   />
                 </li>
@@ -73,8 +77,6 @@ const CustomNode = ({ data }) => {
           )}
         </div>
       )}
-      <Handle type="source" id={`${data.label}-${data.label}`} position={Position.Bottom} />
-      <Handle type="target" id={`${data.label}-${data.label}`} position={Position.Top} />
     </div>
   );
 };
