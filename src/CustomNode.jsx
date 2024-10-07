@@ -24,27 +24,57 @@ const CustomNode = ({ data }) => {
           {!subCollapsed && (
             <ul>
               {data.components1.map((component, index) => (
-                <li key={index}>{component}</li>
+                <li key={index}>
+                  <div className='bg-red-500'>
+                    {component}
+                    <Handle
+                      type="source"
+                      position={Position.Right}
+                      id={`${component}`}
+                      style={{ background: 'red', top: 90 + index * 30 }}
+                    />
+                    <Handle
+                      type="target"
+                      position={Position.Left}
+                      id={`${component}`}
+                      style={{ background: 'red', top: 90 + index * 30 }}
+                    />
+                  </div>
+                </li>
               ))}
             </ul>
           )}
-
           <div className="flex justify-between font-bold  items-center mt-2">
-            <h4>{data.subheading2}</h4>
+            <h4>
+              {data.subheading2}
+            </h4>
             <AiOutlineDown className="cursor-pointer" onClick={toggleSubCollapse} />
           </div>
           {!subCollapsed && (
             <ul>
               {data.components2.map((component, index) => (
-                <li key={index}>{component}</li>
+                <li className='bg-orange-400' key={index}>
+                  {component}
+                  <Handle
+                    type="source"
+                    position={Position.Right}
+                    id={`${component}`}
+                    style={{ background: 'orange', top: 145 + index * 30 }}
+                  />
+                  <Handle
+                    type="target"
+                    position={Position.Left}
+                    id={`${component}`}
+                    style={{ background: 'orange', top: 145 + index * 30 }}
+                  />
+                </li>
               ))}
             </ul>
           )}
         </div>
       )}
-
-      <Handle type="source" position={Position.Bottom} />
-      <Handle type="target" position={Position.Top} />
+      <Handle type="source" id={`${data.label}-${data.label}`} position={Position.Bottom} />
+      <Handle type="target" id={`${data.label}-${data.label}`} position={Position.Top} />
     </div>
   );
 };

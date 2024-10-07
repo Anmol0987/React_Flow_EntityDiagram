@@ -64,17 +64,11 @@ const initialNodes = [
   },
 ];
 
-// const initialEdges = [
-//   { id: 'e1-2', source: '1', target: '2', type: 'smoothstep',color:"white", animated: true },
-//   { id: 'e1-3', source: '1', target: '3', type: 'smoothstep', animated: true },
-//   { id: 'e2-4', source: '2', target: '4', type: 'smoothstep', animated: true },
-// ];
+
 const initialEdges = [
   { id: 'e1-2', source: '1', target: '2', markerEnd: {type: 'arrowclosed',markerHeight:30,markerWidth:30}, type: 'smoothstep', animated: true },
-  { id: 'e1-3', source: '1', target: '3' ,markerEnd: {type: 'arrowclosed'}, type: 'smoothstep', animated: true},
+  { id: 'e1-3', source: '4', target: '3' ,markerEnd: {type: 'arrowclosed'}, type: 'smoothstep', animated: true},
   { id: 'e2-3', source: '2', target: '3',markerEnd: {type: 'arrowclosed'}, type: 'smoothstep', animated: true },
-  { id: 'e3-4', source: '3', target: '4',markerEnd: {type: 'arrowclosed'}, type: 'smoothstep', animated: true },
-  { id: 'e3-2', source: '3', target: '2',markerEnd: {type: 'arrowclosed'}, type: 'smoothstep', animated: true }
 ];
 
 
