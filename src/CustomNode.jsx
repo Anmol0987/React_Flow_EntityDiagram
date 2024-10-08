@@ -45,6 +45,7 @@ const CustomNode = ({ data,id }) => {
                       type="target"
                       position={Position.Left}
                       id={`${id}-${component.id}`}
+
                       className='0F172A  hover:scale-[2.8] transition-transform  duration-200'
                       style={{background: 'red',  top: 90 + index * 30 }}
                     />
@@ -68,6 +69,7 @@ const CustomNode = ({ data,id }) => {
                     type="source"
                     position={Position.Right}
                     id={`${id}-${component.id}`}
+                    
                     style={{ background: 'orange', top: 145 + index * 30 }}
                      className='0F172A  hover:scale-[2.8] transition-transform  duration-200'
                   />
@@ -75,6 +77,7 @@ const CustomNode = ({ data,id }) => {
                     type="target"
                     position={Position.Left}
                     id={`${id}-${component.id}`}
+
                     style={{ background: 'orange', top: 145 + index * 30 }}
                      className='0F172A  hover:scale-[2.8] transition-transform  duration-200'
                   />

@@ -10,6 +10,7 @@ import {ReactFlow,
 import '@xyflow/react/dist/style.css';
 import CustomNode from './CustomNode'; // Import the custom node component
 import { data } from 'autoprefixer';
+import Form from './Form.jsx';
 
 const nodeTypes = { collapsibleNode: CustomNode };
 
@@ -70,6 +71,8 @@ const initialNodes = [
   //   position: { x: 400, y: 400 },
   // },
 ];
+
+
 const initialEdges = [
   { id: 'e1', source: '1', target: '2' ,markerEnd: {type: 'arrowclosed'}, },
   // { id: 'e2', source: '1-c1', target: '2-c4', markerEnd: { type: 'arrowclosed' } },
@@ -83,10 +86,23 @@ const ERDiagram = () => {
   const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
   const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
 
-  const onConnect = useCallback((params) =>
-      setEdges((eds) => addEdge({ ...params, markerEnd: { type: 'arrowclosed',markerWidth: 30, markerHeight: 30 } }, eds)),
-    [setEdges],
+  const onConnect = useCallback(
+    (params) =>
+      setEdges((eds) =>
+        addEdge(
+          {
+            ...params,
+            markerEnd: { type: 'arrowclosed', markerWidth: 30, markerHeight: 30 },
+          },
+          eds
+        )
+      ),
+    [setEdges]
   );
+  // const onConnect = ()=>{
+  //   console.log(`1-${data.components1}-c1`);
+  // }
+
 
   return (
     <div style={{background: "black", width: '100vw', height: '100vh' }}>
