@@ -1,5 +1,6 @@
 import React, { useCallback } from 'react';
-import {ReactFlow, 
+import {
+  ReactFlow,
   MiniMap,
   Controls,
   Background,
@@ -19,15 +20,15 @@ const initialNodes = [
     id: '1',
     type: 'collapsibleNode',
     data: {
-      
       label: 'Node 1',
-      subheading1: 'Subheading 1.1',
-      components1: [
+      components: [
         { id: 'C1', name: 'Component A' },
-        { id: 'C2', name: 'Component B' }
+        { id: 'C2', name: 'Component B' },
+        { id: 'C3', name: 'Component c' },
+        { id: 'C4', name: 'Component D' }
+
       ],
-      subheading2: 'Subheading 1.2',
-      components2: [{ id: 'C3', name: 'Component C' }],
+
     },
     position: { x: 100, y: 100 },
   },
@@ -36,13 +37,7 @@ const initialNodes = [
     type: 'collapsibleNode',
     data: {
       label: 'Node 2',
-      subheading1: 'Subheading 2.1',
-      components1: [{ id: 'C4', name: 'Component D' }],
-      subheading2: 'Subheading 2.2',
-      components2: [
-        { id: 'C5', name: 'Component E' },
-        { id: 'C6', name: 'Component F' },
-      ],
+      components: [{ id: 'C5', name: 'Component E' }],
     },
     position: { x: 400, y: 100 },
   },
@@ -51,42 +46,12 @@ const initialNodes = [
     type: 'collapsibleNode',
     data: {
       label: 'Node 3',
-      subheading1: 'Subheading 3.1',
-      components1: [{ id: 'C7', name: 'Component g' }],
-      subheading2: 'Subheading 3.2',
-      components2: [
-        { id: 'C8', name: 'Component H' },
-        { id: 'C9', name: 'Component I' },
-      ],
+      components: [{ id: 'C7', name: 'Component g' }],
+      
     },
     position: { x: 300, y: 400 },
   },
-  // {
-  //   id: '3',
-  //   type: 'collapsibleNode',
-  //   data: {
-  //     label: 'node3',
-  //     subheading1: 'Subheading 3.1',
-  //     components1: ['Component G'],
-  //     subheading2: 'Subheading 3.2',
-  //     components2: ['Component H', 'Component I'],
-  //   },
-  //   position: { x: 400, y: 100 },
-  // },
-  // {
-  //   id: '4',
-  //   type: 'collapsibleNode',
-  //   data: {
-  //     label: 'node4',
-  //     subheading1: 'Subheading 4.1',
-  //     components1: ['Component J'],
-  //     subheading2: 'Subheading 4.2',
-  //     components2: ['Component K'],
-  //   },
-  //   position: { x: 400, y: 400 },
-  // },
-];
-
+]
 
 const initialEdges = [
   { 
@@ -133,7 +98,7 @@ const ERDiagram = () => {
 
 
   return (
-    <div style={{background: "black", width: '100vw', height: '100vh' }}>
+    <div style={{ background: "black", width: '100vw', height: '100vh' }}>
       <ReactFlow
         nodes={nodes}
         edges={edges}
@@ -144,7 +109,7 @@ const ERDiagram = () => {
         fitView
       >
         <MiniMap />
-        <Controls />    
+        <Controls />
         <Background />
       </ReactFlow>
     </div>
