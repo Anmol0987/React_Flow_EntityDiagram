@@ -2,15 +2,16 @@
 import React from 'react';
 import ERDiagram from './ERDiagram';
 import Form from './Form';
+import './index.css'
 
 function App() {
   return (
-    <div >
-      <div className='flex p-1  justify-between items-center'>
+    <div className=" overflow-x-scroll no-scrollbar" >
+      <div className='flex px-4 py-2  justify-between items-center'>
         <h1>Entity Relationship Diagram</h1>
         <Form />
       </div>
-      <ERDiagram />
+      <ERDiagram  />
     </div>
     //   <h1 className="text-3xl font-bold underline">
     //   Hello world!

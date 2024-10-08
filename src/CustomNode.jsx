@@ -17,8 +17,8 @@ const CustomNode = ({ data,id }) => {
           <FiTable/>
           {data.label}
           </h3>
-          <Handle type="source" id={`${id}`} position={Position.Top} className='bg-[#8EB7FF] hover:scale-[2.8] transition-transform duration-200' />
-          <Handle type="target" id={`${id}`} position={Position.Bottom} className='bg-[#8EB7FF] hover:scale-[2.8] transition-transform duration-200' />
+          <Handle type="source" id={`${id}`} position={Position.Bottom} className='bg-[#8EB7FF] hover:scale-[2.8] transition-transform duration-200' />
+          <Handle type="target" id={`${id}`} position={Position.Top} className='bg-[#8EB7FF] hover:scale-[2.8] transition-transform duration-200' />
         <AiOutlineDown className="cursor-pointer font-bold text-white" onClick={toggleCollapse} />
       </div>
       
