@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
- mongoose.connect('mongodb://localhost:27017/systumm');
+ mongoose.connect('mongodb+srv://ayush8388:VrwCQWOi5ZO1NtGV@cluter2.qfvyl.mongodb.net/?retryWrites=true&w=majority&appName=cluter2');
 
 const NodesSchema = new mongoose.Schema({
     id: {
