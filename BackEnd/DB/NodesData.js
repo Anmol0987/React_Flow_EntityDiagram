@@ -1,21 +1,31 @@
 const mongoose = require('mongoose');
- mongoose.connect('mongodb+srv://ayush8388:VrwCQWOi5ZO1NtGV@cluter2.qfvyl.mongodb.net/?retryWrites=true&w=majority&appName=cluter2');
+ mongoose.connect('mongodb://localhost:27017/systumm');
 
 const NodesSchema = new mongoose.Schema({
-    id: String,
-    type: String,
+    id: {
+        type: String,
+    },
+    type: {
+        type: String,
+        default: 'collapsibleNode'
+    },
     data: {
-        label: String,
+        label: {
+            type: String,
+            default: 'Node'
+        },
         components: [
             {
-                id: String,
+                id: {
+                    type: String,
+                },
                 name: String
             }
         ]
     },
     position: {
-        x: Number,
-        y: Number,
+        x: {type: Number, default: 100},
+        y: {type:Number, default: 200},
     }
 });
 

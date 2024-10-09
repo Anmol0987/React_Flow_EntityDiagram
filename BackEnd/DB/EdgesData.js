@@ -5,12 +5,24 @@ const EdgesSchema = new mongoose.Schema({
     source: String,
     target: String,
     markerEnd: {
-        type: String
+        type: {
+            type: String,
+            default: 'arrowclosed',
+        }
     },
-    type: String,
+    type: {
+        type: String,
+        default: 'smoothstep'
+    },
     style: {
-        stroke: String,
-        strokeWidth: Number
+        stroke: {
+            type: String,
+            default: 'green'
+        },
+        strokeWidth: {
+            type: Number,
+            default: 2
+        }
     }
 });
 
