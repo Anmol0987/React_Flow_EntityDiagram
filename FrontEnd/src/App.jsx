@@ -3,13 +3,17 @@ import React from 'react';
 import ERDiagram from './ERDiagram';
 import Form from './Form';
 import './index.css'
+import EdgeForm from './EdgeForm';
 
 function App() {
   return (
     <div className=" overflow-x-scroll no-scrollbar" >
       <div className='flex px-4 py-2  justify-between items-center'>
         <h1>Entity Relationship Diagram</h1>
-        <Form />
+       <div className='flex items-center justify-center gap-6'>
+          <Form />
+          <EdgeForm/>
+       </div>
       </div>
       <ERDiagram  />
     </div>

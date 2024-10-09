@@ -11,17 +11,34 @@ const CustomNode = ({ data, id }) => {
           <FiTable />
           {data.label}
         </h3>
-        <Handle type="source" id={`${id}`} position={Position.Right} className='bg-[#8EB7FF] hover:scale-[2.8] transition-transform duration-200' />
-        <Handle type="target" id={`${id}`} position={Position.Left} className='bg-[#8EB7FF] hover:scale-[2.8] transition-transform duration-200' />
+        <Handle type="source" id={`${id}`} position={Position.Bottom} className='bg-[#8EB7FF] hover:scale-[2.8] transition-transform duration-200' />
+        <Handle type="target" id={`${id}`} position={Position.Top} className='bg-[#8EB7FF] hover:scale-[2.8] transition-transform duration-200' />
       </div>
 
       {data.components.map((component, index) => (
-        <li key={index} style={{listStyle:'none'}} >
-          <div className='text-white p-1 '>
-            {component.name}          
-          </div>
-        </li>
-      ))}
+          <li key={index} style={{ listStyle: 'none', display: 'flex', justifyContent: 'space-between', padding: '5px' }}>
+            <div className='text-white p-1'>
+              {component.name}
+            </div>
+            {/* Target handle on the left of each component */}
+            <Handle
+              type="target"
+              id={`${id}-${component.id}-target`}
+              position={Position.Left}
+              className='bg-gray-300 hover:scale-[2.8] transition-transform duration-200'
+              style={{ top: '50%', }}
+            />
+            {/* Source handle on the right of each component */}
+            <Handle
+              type="source"
+              id={`${id}-${component.id}-source`}
+              position={Position.Right}
+              className='bg-gray-300 hover:scale-[2.8] transition-transform duration-200'
+              style={{ top: '50%', }}
+              
+            />
+          </li>
+        ))}
     </div>
   );
 };
